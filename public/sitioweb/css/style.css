@@ -1,0 +1,483 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f7; 
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #90a4ae;
+    padding: 15px 20px;
+    margin: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-radius: 25px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color:#f5f3f8 ;
+    border-radius: 10px;
+    border: #212222 solid 1.1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    position: relative;
+    z-index: 10; 
+}
+.menu .img{
+    width: 100px;
+}
+
+.menu-checkbox {
+    display: none;
+}
+
+.menu-toggle {
+    font-size: 2rem;
+    color: #1787f7;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s;
+    z-index: 11; 
+}
+
+.menu-toggle:hover {
+    transform: rotate(180deg);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-menu a:hover {
+    background-color: #e91e63;
+    transform: scale(1.1);
+}
+
+.nav-menu a.active {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Subrayado animado */
+.nav-menu a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #90a4ae;
+    transition: width 0.3s;
+    margin-top: 2px;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        z-index: 11;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(179, 178, 178, 0.8);
+        border-top: 1px solid #f8f9fa;
+        padding: 2px ;
+    }
+
+    .menu-checkbox:checked + .menu-toggle + .nav-menu {
+        display: flex;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu li {
+        margin: 2px;
+    }
+
+    .nav-menu a {
+        padding: 0.1px;
+        width: 100%;
+        color: #000000; 
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+    }
+
+    .nav-menu a:hover {
+        background-color: #51f9ff;
+        color: #000;
+    }
+}
+
+
+/* Main Content */
+.carrusel {
+    max-width: 100%;
+    margin:0 60px;
+    padding: 12px;
+    overflow: hidden;
+    position: relative;
+    background-color: #90a4ae;
+    border-radius: 10px;
+}
+  
+.carousel-inner {
+    display: flex;
+    align-items: center;
+}
+  
+.carousel-item img {
+    width: 100%;
+    max-height: 600px; 
+    height: auto; 
+    object-fit: cover; 
+    border-radius: 20px; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+  
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+}
+  
+.carousel-indicators button {
+    width: 100px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #90a4ae;
+    border: none;
+}
+  
+.carousel-indicators .active {
+    background-color: #90a4ae;
+}
+
+
+.MV {
+    display: flex;
+    background-color: #90a4ae;
+    flex-direction: row;
+    margin: 30px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease;
+}
+
+.MV:hover {
+    transform: scale(1.05); 
+}
+  
+
+.mision, .vision {
+    text-align: center;
+    border: 1px solid #212222; 
+    border-radius: 25px;
+    margin: 10px;
+    padding: 1.2rem;
+    background-color: #f8f9fa;
+}
+
+.mision:hover, .vision:hover {
+    transform: scale(1.05); 
+}
+
+.tit-servi {
+    padding: 18px 0 0 0;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.parra-ser {
+    margin: 25px;
+    padding: 20px;
+    text-align: justify;
+    font-size: 1rem;
+}
+
+/* Servicios */
+.precios{
+    background-color: #90a4ae;
+    margin: 50px;
+    border-radius: 25px;
+    padding: 1rem;
+}
+
+/* Estilo base para la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  .table th, 
+  .table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .table thead th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color: #fff;
+  }
+  
+  /* Efecto hover en las filas */
+  .table tbody tr:hover {
+    background-color: #eaeaea;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Resaltar la fila seleccionada */
+  .table tbody tr:focus-within {
+    background-color: #d6eaff;
+    outline: 2px solid #89c4f4;
+    outline-offset: -2px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Estilo responsivo */
+  @media screen and (max-width: 768px) {
+    .table {
+      font-size: 14px;
+    }
+    .table th, 
+    .table td {
+      padding: 8px 10px;
+    }
+  }
+  
+
+.SERVICIOS {
+    margin: 50px;
+    background-color: #90a4ae;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease;
+}
+
+.SERVICIOS:hover {
+    transform: scale(1.05); 
+}
+
+.SERVICIOS .div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+}
+
+.SERVICIOS img {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease;
+}
+
+.SERVICIOS img:hover {
+    transform: scale(1.05); 
+}
+
+/* Footer */
+.footer{
+    background: #90a4ae;
+    margin: 50px;
+    padding: 15px;
+}
+.footer h2{
+    text-align: center;
+    
+}
+.footer .direc{
+    margin-left: 400px;
+    margin-right: 375px;
+    margin-top: 15px;
+    padding: 25px;
+    background-color: white;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.Contacto{
+    display: flex;
+    background-color: white;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    opacity: 0.8;
+    padding: 25px;
+}
+
+.btn{
+    
+    align-items: center;
+}
+
+.btn a{
+    color: #000000;
+    text-decoration: none;
+    list-style-type: none;
+    text-align: center;
+}
+
+.DERECHOS {
+    color:#b0bec5;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .MV {
+        flex-direction: column;
+    }
+
+    .SERVICIOS .div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .parra-ser {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+
+    .carrusel{
+        margin: 10px;
+    }
+
+    .MV{
+        margin: 8px;
+    }
+
+    .MV .mision p{
+        margin: 0;
+        text-align: justify;
+        font-size: 1.2rem;
+    }
+
+    .MV .vision p{
+        margin: 0;
+        text-align: justify;
+        font-size: 1.2rem;
+    }
+
+    .mision, .vision {
+        margin: 40px;
+    }
+
+    .SERVICIOS{
+        margin: 10px;
+    }
+
+    .SERVICIOS .div {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .SERVICIOS .div img{
+        margin-right: 0;
+        padding: 10px 20px;
+        margin: 2px;
+        box-shadow: 0;
+        align-items: center;
+    }
+    
+    .SERVICIOS .img-fin{
+        margin-right: 50px;
+        padding-left: 50px;
+    }
+
+    .tit-servi {
+        font-size: 1.8rem;
+    }
+
+    .parra-ser {
+        font-size: 1.4rem;
+    }
+    
+    .footer .direc{
+        margin-left: 1px;
+    }
+    
+    .Contacto{
+        flex-direction: column;
+        align-items: center;
+    }
+}
