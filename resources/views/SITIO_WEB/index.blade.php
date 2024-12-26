@@ -16,8 +16,8 @@
     <header>
         <div class="menu">
             <section>
-                @foreach($getInformaciones as $getInformacioness)
-                <img class="img" src="{{getInformacioness->logo}}" alt="icono de la emplesa">  <!-- {{asset('sitioweb/img/imagen3.ico')}} -->
+                @foreach($getInformaciones as $getInformaciones)
+                <img class="img" src="{{getInformaciones->logo}}" alt="icono de la emplesa">  <!-- {{asset('sitioweb/img/imagen3.ico')}} -->
                 @endforeach
             </section><br>
             <section>
@@ -195,23 +195,23 @@
            <section>
             <h2 class="titu-dir"><i class="fa-solid fa-location-dot fa-beat-fade"></i> Dirección</h2><br>
                 <div class="direc">
-                    @foreach($getInformaciones as $getInformacioness)
+                    @foreach($getInformaciones as $getInformaciones)
                     <!-- <iframe class="guia" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d127673.97887461817!2d-78.423661!3d-0.103268!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d58efb841f1f6d%3A0x5cdb659e0304bca0!2sParque%20Central%20de%20Calder%C3%B3n!5e0!3m2!1ses!2sec!4v1733421088801!5m2!1ses!2sec" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-                    <iframe class="guia" src="{{$getinformacioness->direccion}}" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe class="guia" src="{{$getinformaciones->direccion}}" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     @endforeach
                 </div>
            </section><hr>
             <section class="Contacto">
                 <section id="contacto">
                     <h3 class="Con-what"><i class="fa-solid fa-phone fa-beat-fade"></i> Contacto</h3>
-                    @foreach($getInformaciones as $getInformacioness)
-                    <button type="button" class="btn btn-outline-success"><i class="fa-brands fa-whatsapp fa-beat-fade"></i><a target="_blank" href="{{getinformacion->telefono}}"> WhatsApp</a></button>  <!--https://w.app/l7Xkpq-->
+                    @foreach($getInformaciones as $getInformaciones)
+                    <button type="button" class="btn btn-outline-success"><i class="fa-brands fa-whatsapp fa-beat-fade"></i><a target="_blank" href="{{getinformaciones->telefono}}"> WhatsApp</a></button>  <!--https://w.app/l7Xkpq-->
                     @endforeach
                 </section><br>
                 <section id="Redes">
                     <h3 class="Con-what"><i class="fa-brands fa-facebook fa-beat-fade"></i> Redes Sociales</h3>
-                    @foreach($getredes as $getredess)
-                    <button type="button" class="btn btn-outline-primary"><i class="fa-brands fa-facebook fa-beat"></i><a target="_blank" href="{{$getRedess->url}}"> Facebook</a></button>
+                    @foreach($getredes as $getredes)
+                    <button type="button" class="btn btn-outline-primary"><i class="fa-brands fa-facebook fa-beat"></i><a target="_blank" href="{{$getRedes->url}}"> Facebook</a></button>
                     @endforeach
                 </section>
             </section><hr>    

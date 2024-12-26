@@ -20,7 +20,7 @@ class paginacontroller extends Controller
         $getImagenes = Imagenes::all();
         $getCategorias = Categorias::all();
         
-        return view('SitioWeb/index', compact(
+        return view('SITIO_WEB.index', compact(
             'getInformaciones',
             'getImagenes',
             'getMisvis',
