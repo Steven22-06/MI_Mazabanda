@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\paginacontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('SITIO_WEB/index');
-});
+
+
+Route::get('/', [paginacontroller::Class, 'Inicio']);
+
+//ruta mision y vision
+Route::get('/MisVis',[MisVIsControler::class, 'index']);
+Route::get('/create2', [MisVIsControler::class, 'create2']);
+Route::get('/editMisVis', [MisVIsControler::class, 'editMisVis']);
+Route::post('/store', [MisVIsControler::class, 'store']);
